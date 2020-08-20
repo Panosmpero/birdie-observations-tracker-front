@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  background-color: #d0f3f2;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+.home-screen {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 7% 90%;
+      grid-template-rows: 7% 90%;
+  height: 100%;
+}
+
+.main-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+}
+
+.main-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 5;
+      -ms-flex: 5 0 15rem;
+          flex: 5 0 15rem;
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 1rem;
+}
+
+.linegraph-container {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  margin-top: 1rem;
+}
+
+.linegraph-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.timeline-container {
+  overflow-y: auto;
+  -webkit-box-flex: 4;
+      -ms-flex: 4 0 25rem;
+          flex: 4 0 25rem;
+  text-transform: capitalize;
+  height: 100%;
+  margin: 1rem;
+}
+
+.container {
+  background-color: #faf6ff;
+  border-radius: 1rem;
+  padding: 1rem;
+  -webkit-box-shadow: 0 0 5px 2px #54c5c1;
+          box-shadow: 0 0 5px 2px #54c5c1;
+}
+
+.overflow {
+  overflow-y: hidden;
+}
+
+.overflow:hover {
+  overflow-y: auto;
+}
+
+.overflow::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 10px #54c5c1;
+          box-shadow: inset 0 0 10px #54c5c1;
+  background: #faf6ff;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 3px #d0f3f2;
+          box-shadow: inset 0 0 3px #d0f3f2;
+  background: #00254d;
+  border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .home-screen {
+    -ms-grid-rows: 10% 87%;
+        grid-template-rows: 10% 87%;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-screen {
+    -ms-grid-rows: 14% 83%;
+        grid-template-rows: 14% 83%;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-screen {
+    -ms-grid-rows: 19% 78%;
+        grid-template-rows: 19% 78%;
+  }
+}
+
+.table-container {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1.34rem;
+  max-width: calc(100vw - 2.75em);
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.table-container th {
+  text-transform: uppercase;
+  border-bottom: 1px #d0f3f2 solid;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  text-align: left;
+  background-color: #00254d;
+  color: #faf6ff;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+.table-container tbody tr:nth-child(even) {
+  background-color: #d0f3f2;
+}
+
+.table-container tbody tr td {
+  padding: 0.4rem;
+}
+
+.options-bar {
+  color: #faf6ff;
+  background-color: #00254d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
+
+.options-bar #eventType {
+  margin-left: 0.5rem;
+}
+
+.options-bar .reset-btn {
+  background-color: #faf6ff;
+  color: #00254d;
+}
+
+.options-bar select,
+.options-bar input, .options-bar .reset-btn {
+  border-radius: 1rem;
+  padding: 0.1rem;
+}
+
+.options-bar select:hover,
+.options-bar input:hover, .options-bar .reset-btn:hover {
+  -webkit-box-shadow: 0 0 5px 2px #d0f3f2;
+          box-shadow: 0 0 5px 2px #d0f3f2;
+}
+
+.options-bar input[type="submit"], .options-bar .reset-btn {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .options-bar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,43 @@
+.options-bar {
+  color: $birdie_lighter;
+  background-color: $birdie_dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+
+  #eventType {
+    margin-left: 0.5rem;
+  }
+
+  .reset-btn {
+    background-color: $birdie_lighter;
+    color: $birdie_dark;
+  }
+
+  select,
+  input, .reset-btn {
+    border-radius: 1rem;
+    padding: 0.1rem;
+
+    &:hover {
+      box-shadow: 0 0 5px 2px $birdie_light;
+    }
+  }
+
+  input[type="submit"], .reset-btn {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .options-bar {
+    // align-items: flex-start;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

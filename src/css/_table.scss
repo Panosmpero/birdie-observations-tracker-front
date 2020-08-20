@@ -1,0 +1,33 @@
+
+.table-container {
+  flex-basis: 48%;
+  flex: 1;
+  font-size: 1.34rem;
+  max-width: calc(100vw - 2.75em);
+  overflow-x: auto;
+  border-collapse: collapse;
+
+  th {
+    text-transform: uppercase;
+    border-bottom: 1px $birdie_light solid;
+    position: sticky;
+    top: 0;
+    text-align: left;
+    background-color: $birdie_dark;
+    color: $birdie_lighter;
+    border-radius: .5rem;
+    padding: .5rem;
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: $birdie_light;
+      }
+
+      td {
+        padding: 0.4rem;
+      }
+    }
+  }
+}
