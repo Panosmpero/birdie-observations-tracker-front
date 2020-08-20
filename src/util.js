@@ -26,5 +26,5 @@ export function formatDate(date) {
 export function filterDataKeys(data) {
   return [
     ...new Set(data.reduce((acc, x) => acc.concat(Object.keys(x)), [])),
-  ].filter((x) => !/^id$|_id|observed|observations|screenprops|navigation/gi.test(x));
+  ].filter((x) => !/^id$|_id|observed|observations|screenprops|navigation|rrule/gi.test(x));
 }
