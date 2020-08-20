@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { observationsRequest } from "../store/actions/observationsActions";
 import * as util from "../util";
+import Loading from "./Loading";
 
 const Table = () => {
   const { payload, error } = useSelector((state) => state.observations);
@@ -23,7 +24,7 @@ const Table = () => {
       {error ? (
         <div>Error</div>
       ) : !payload ? (
-        <div>Loading</div>
+        <Loading />
       ) : (
         <table>
           <thead>

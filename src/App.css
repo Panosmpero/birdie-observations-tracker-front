@@ -63,18 +63,6 @@ body {
   margin: 1rem;
 }
 
-.linegraph-container {
-  -ms-flex-preferred-size: 48%;
-      flex-basis: 48%;
-  margin-top: 1rem;
-  position: relative;
-}
-
-.linegraph-container canvas {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 .logo {
   position: absolute;
   top: 0;
@@ -100,6 +88,7 @@ body {
   padding: 1rem;
   -webkit-box-shadow: 0 0 5px 2px #54c5c1;
           box-shadow: 0 0 5px 2px #54c5c1;
+  position: relative;
 }
 
 .overflow {
@@ -232,6 +221,117 @@ body {
   .options-bar {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+}
+
+.linegraph-container {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.linegraph-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.linegraph-container svg {
+  z-index: -10;
+}
+
+.loading-container {
+  background: inherit;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 500;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  border-top: 2px #54c5c1 solid;
+  border-radius: 50%;
+  -webkit-animation: loading infinite 1s linear;
+          animation: loading infinite 1s linear;
+}
+
+.loading-text {
+  color: #54c5c1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 16.66667px;
+}
+
+.loading-dot {
+  opacity: 0;
+}
+
+.loading-dot:nth-child(1) {
+  -webkit-animation: loading-dot infinite 1.4s;
+          animation: loading-dot infinite 1.4s;
+}
+
+.loading-dot:nth-child(2) {
+  -webkit-animation: loading-dot infinite 1.4s;
+          animation: loading-dot infinite 1.4s;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.loading-dot:nth-child(3) {
+  -webkit-animation: loading-dot infinite 1.4s;
+          animation: loading-dot infinite 1.4s;
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+@-webkit-keyframes loading-dot {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loading-dot {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=App.css.map */

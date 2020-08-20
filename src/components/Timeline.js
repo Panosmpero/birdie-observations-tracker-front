@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { observationsRequest } from "../store/actions/observationsActions";
 import TimelineGraph from "react-time-line";
 import * as util from "../util";
+import Loading from "./Loading";
 
 const Timeline = () => {
   const { payload, error } = useSelector((state) => state.observations);
@@ -28,7 +29,7 @@ const Timeline = () => {
       {error ? (
         <div>Error</div>
       ) : !payload ? (
-        <div>Loading</div>
+        <Loading />
       ) : (
         <TimelineGraph items={data} format="hh:mm a" />
       )}

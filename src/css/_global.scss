@@ -52,17 +52,6 @@ body {
   margin: 1rem;
 }
 
-.linegraph-container {
-  flex-basis: 48%;
-  margin-top: 1rem;
-  position: relative;
-
-  canvas {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
 .logo {
   position: absolute;
   top: 0;
@@ -85,6 +74,7 @@ body {
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: 0 0 5px 2px $birdie_medium;
+  position: relative;
 }
 
 .overflow {
