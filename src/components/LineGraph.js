@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Line } from "react-chartjs-2";
 import { raw } from "./raw";
 import * as util from "../util";
 import { ReactComponent as BirdieSvg } from "../assets/images/logo-birdie.svg"
 
 const LineGraph = () => {
-  useEffect(() => {
 
-  }, [])
   // const payload = raw;
   const lineKeys = util.filterDataKeys(raw);
 

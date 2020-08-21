@@ -1,18 +1,11 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { observationsRequest } from "../store/actions/observationsActions";
+import React from "react";
+import { useSelector } from "react-redux";
 import TimelineGraph from "react-time-line";
 import * as util from "../util";
 import Loading from "./Loading";
 
 const Timeline = () => {
   const { payload, error } = useSelector((state) => state.observations);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(observationsRequest());
-    // eslint-disable-next-line
-  }, []);
 
   const lineData = () => {
     return payload.map((observation) => {

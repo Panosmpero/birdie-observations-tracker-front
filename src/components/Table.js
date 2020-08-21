@@ -1,21 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { observationsRequest } from "../store/actions/observationsActions";
+import React from "react";
+import { useSelector } from "react-redux";
 import * as util from "../util";
 import Loading from "./Loading";
 
 const Table = () => {
   const { payload, error } = useSelector((state) => state.observations);
-  const dispatch = useDispatch();
-
-  const getObservations = () => {
-    dispatch(observationsRequest());
-  };
-
-  useEffect(() => {
-    getObservations();
-    // eslint-disable-next-line
-  }, []);
 
   const tableKeys = payload ? util.filterDataKeys(payload) : []
 
