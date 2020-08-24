@@ -62,7 +62,7 @@ body {
 }
 
 .timeline-container {
-  overflow-y: auto;
+  overflow: auto;
   flex: 4 0 25rem;
   text-transform: capitalize;
   height: 100%;
@@ -78,14 +78,15 @@ body {
 }
 
 .overflow {
-  overflow-y: hidden;
+  overflow: hidden;
 
   &:hover {
-    overflow-y: auto;
+    overflow: auto;
   }
 
   &::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
   }
 
   &::-webkit-scrollbar-track {

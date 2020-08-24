@@ -26,7 +26,7 @@ export function formatDate(date) {
 export function filterDataKeys(data) {
   let newArr = [
     ...new Set(data.reduce((acc, x) => acc.concat(Object.keys(x)), [])),
-  ].filter((x) => !/^id$|_id|observed|observations|screenprops|navigation|media|rrule/gi.test(x));
+  ].filter((x) => !/^id$|_id|observed|observations|screenprops|navigation|media|rrule|expected_dose_timestamp/gi.test(x));
   // harcoded filter function
 
   // find timestamp and move it a the first column

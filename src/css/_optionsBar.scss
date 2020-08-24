@@ -34,6 +34,11 @@
   }
 }
 
+.options-buttons {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .options-bar {
     // align-items: flex-start;

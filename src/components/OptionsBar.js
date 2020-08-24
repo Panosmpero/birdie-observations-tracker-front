@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { observationsRequest } from "../store/actions/observationsActions";
+import * as util from "../util";
 
 const OptionsBar = () => {
   const [client, setClient] = useState("df50cac5-293c-490d-a06c-ee26796f850d");
@@ -10,7 +11,7 @@ const OptionsBar = () => {
 
   const dispatch = useDispatch();
   const { payload } = useSelector((state) => state.observations);
-
+  
   useEffect(() => {
     dispatch(observationsRequest({}));
     // eslint-disable-next-line
@@ -63,7 +64,7 @@ const OptionsBar = () => {
           defaultValue={""}
           required
         >
-          <option value="" disabled hidden>
+          <option value="" hidden>
             Event Type
           </option>
           <option value="all">All</option>
@@ -71,7 +72,7 @@ const OptionsBar = () => {
             [...new Set(payload.map((x) => x.event_type))].map(
               (event_type, id) => (
                 <option key={id} value={event_type}>
-                  {event_type}
+                  {util.formatString(event_type)}
                 </option>
               )
             )}
@@ -100,12 +101,14 @@ const OptionsBar = () => {
         />
       </div>
 
-      <div>
-        <input type="submit" value="Submit" />
-      </div>
-      <div>Results: {payload && payload.length}</div>
-      <div onClick={handleReset} className="reset-btn">
-        reset
+      <div className="options-buttons">
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+        <div>Results: {payload && payload.length}</div>
+        <div onClick={handleReset} className="reset-btn">
+          reset
+        </div>
       </div>
     </form>
   );

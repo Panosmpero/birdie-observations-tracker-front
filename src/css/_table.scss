@@ -4,8 +4,12 @@
   flex: 1;
   font-size: 1.34rem;
   max-width: calc(100vw - 2.75em);
-  overflow-x: auto;
+  // overflow: auto;
   border-collapse: collapse;
+
+  table {
+    width: 100%;
+  }
 
   th {
     text-transform: uppercase;
